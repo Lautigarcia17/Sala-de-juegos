@@ -1,0 +1,30 @@
+.error-manage
+{
+    text-transform: uppercase;
+    color: white;
+}
+
+.text-error{
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+.content-error{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-error{
+    font-size: 32px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border-radius: 32px;
+    padding: 8px 38px;
+}
+
+.btn-error:hover{
+    border: white solid 3px;
+    font-weight: 900;
+}
