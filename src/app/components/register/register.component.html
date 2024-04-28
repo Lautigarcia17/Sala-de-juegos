@@ -1,4 +1,4 @@
-
+<mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
 <div class="content">
     <div class="col-12 text-center align-self-center">
         <div class="pb-5 pt-sm-2">
@@ -6,7 +6,7 @@
                 <div class="card-3d-wrapper">
                     <div class="card-back">
                         <div class="center-wrap">
-                            <form [formGroup]="formUser">
+                            <form [formGroup]="formUser" (ngSubmit)="register()">
 
                                 <h4 class="tittle-form">Registrarse</h4>
                                 <div class="form-group">
@@ -25,7 +25,7 @@
                                     <i class="input-icon uil uil-lock-alt"></i>
                                     <div class="validation-message" *ngIf="formUser.get('password')?.hasError('required')" [hidden]="formUser.get('password')?.pristine" >La contraseña es requerida</div>
                                 </div>
-                                <button class="btn margin-top">Register</button>
+                                <button class="btn margin-top" id="btn-register"  [disabled]="formUser.invalid">Register</button>
                             </form>
                                 <p class="final-text">
                                     <a href="./login" class="link">Tienes una cuenta?</a>

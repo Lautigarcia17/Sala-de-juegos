@@ -1,37 +1,64 @@
 import { Component } from '@angular/core';
 import { FormBuilder,FormGroup,ReactiveFormsModule, Validators } from '@angular/forms';
-import { MessageAlertService } from '../../services/message-alert.service';
-import { SweetAlertIcon } from 'sweetalert2';
 import { CommonModule } from '@angular/common';
+import { DatabaseService } from '../../services/database.service';
+import { AuthService } from '../../services/auth.service';
+import { LocalStorageService } from '../../services/local-storage.service';
+import { GlobalDataService } from '../../services/global-data.service';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { User } from '../../classes/user';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule,MatProgressBarModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
 
-  constructor(private fb: FormBuilder, private messageAlert : MessageAlertService){}
+  loading : boolean = false;
+
+  constructor(private fb: FormBuilder, private database : DatabaseService, private authentication : AuthService, private localstorage : LocalStorageService, private globalData : GlobalDataService, private router : Router, private toastr : ToastrService){}
 
 
-  formUser : any= this.fb.group({
+  formUser : FormGroup = this.fb.group({
     'email': ["",[Validators.required,Validators.email]],
     "password": ["",Validators.required]
   })
 
   login()
   {
-    let email: string = this.formUser.get('email')?.value ?? ''; // With "??", If null,it becomes an empty string 
-    let password: string = this.formUser.get('password')?.value ?? '';
-    console.log(email);
-    console.log(password);
-    let message :string  = "Login correctly";
-    let icon :SweetAlertIcon  = "success";
-    let title :string = "Congratulations";
+    let btnLogin : HTMLElement = document.getElementById('btn-login') as HTMLElement; 
+    let user : User = new User(
+      this.formUser.get('email')?.value ?? '',
+      this.formUser.get('password')?.value ?? ''
+    )
 
-    this.messageAlert.showAlert(message,icon,title);
+    this.loading = true;  
+    btnLogin.setAttribute('disabled', 'true');
+
+    this.authentication.login(user.email,user.password)
+    .then( () =>{
+        this.database.findUsernameDatabase(user.email)
+        .then((username : string ) =>{
+          this.localstorage.saveDataUser(username);
+          this.router.navigate(["home"]); 
+          this.globalData.setStateLogin(true);
+          this.toastr.success("Te has logeado !","Felicidades!", {timeOut: 3000,progressBar: true,closeButton:true}); 
+        })
+        .finally( () =>{
+          this.loading = false;
+        })
+      })
+    .catch( () =>{
+      this.loading = false;
+      btnLogin.removeAttribute('disabled');
+      this.toastr.info("El usuario o contraseña son incorrectos","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
+    })
+    
   }
 
   accessAutomatically(numberUser : number)
@@ -41,7 +68,7 @@ export class LoginComponent {
       case 1:
         this.formUser.patchValue({
           "email": "lauti1718garcia@gmail.com",
-          "password": "lautaro123"
+          "password": "lauticrack1"
         })
       break;
       case 2:

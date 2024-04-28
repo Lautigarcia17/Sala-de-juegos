@@ -1,7 +1,7 @@
 <div class="content">
     <div class="navbar">
         <div class="navbar-buttons">
-            <button routerLink="home" routerLinkActive="active-route"> Home</button>
+            <button *ngIf="globalData.getStateLogin()" routerLink="home" routerLinkActive="active-route"> Home</button>
             <button routerLink="aboutMe" routerLinkActive="active-route"> Acerca de MI</button>
         </div>
 
@@ -10,12 +10,15 @@
         </div>
 
         <div class="navbar-buttons">
-            <button routerLink="login" routerLinkActive="active-route"> Login</button>
-            <button routerLink="register" routerLinkActive="active-route"> Registrarse</button>     
-            <!-- <button> Log Out</button> -->
+            <button *ngIf="!globalData.getStateLogin()" routerLink="login" routerLinkActive="active-route"> Login</button>
+            <button *ngIf="!globalData.getStateLogin()" routerLink="register" routerLinkActive="active-route"> Registrarse</button>
+            <div class="data-user" *ngIf="globalData.getStateLogin()">
+                <h4>{{localstorage.currentUser}}</h4>
+                <h5>{{localstorage.currentDate}}</h5>
+            </div>     
+            <button *ngIf="globalData.getStateLogin()"  (click) = "logOut()"> Log Out</button>
         </div>
     </div>
     <router-outlet />
 </div>
 
-<h1>test</h1>
