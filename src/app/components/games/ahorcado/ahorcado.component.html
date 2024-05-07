@@ -1,0 +1,48 @@
+
+<button class="back-button" (click)="goBack()"> <img src="../../../../assets/back-img.jpg" class="back-icon"> </button>
+<div class="content">
+    <div class="row">
+        <div class="col tittle-game">
+            <h1>El AHORCADO</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <img src="assets/ahorcado/ahorcado{{attemps}}.jpeg" class="ahorcado-img" alt="Perdiste, estas ahorcado!!"
+                title="Perdiste, estas ahorcado!!" />
+            <h3 class="attemps">Intentos: <small>{{attemps}} / 5 </small></h3>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col content-discover-letters">
+            <h1>{{wordHidden}}</h1>
+            <h2 [hidden]="invalidLetters == ''">[ {{invalidLetters}} ]</h2>
+        </div>
+    </div>
+
+    <div class="row mt-5" *ngIf="!win && !lost">
+        <div class="col">
+            <ng-container *ngFor="let letter of letters; let index = index">
+                <button  class="btn-letter" (click)="verifyLetter(letter,index)" [ngClass]="{ 'disabled-btn': buttonDisabled[index] }" [disabled]="buttonDisabled[index]">{{letter}}</button>
+            </ng-container>
+        </div>
+    </div>
+    <div class="row" *ngIf="win">
+        <div class="col ">
+            <h1 class="text-success">Felicidades! Ganaste!</h1>
+        </div>
+    </div>
+    <div class="row" *ngIf="lost">
+        <div class="col">
+            <h3 class="text-danger">Perdiste! Reintentar</h3>
+            <h4 class="text-success">La palabra correcta era: {{word}}</h4>
+        </div>
+    </div>
+
+    <div *ngIf="lost || win">
+        <button  class="btn btn-start" (click)="retry()" >VOLVER A JUGAR </button>
+    </div>
+
+</div>

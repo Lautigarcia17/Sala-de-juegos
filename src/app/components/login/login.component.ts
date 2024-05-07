@@ -17,7 +17,7 @@ import { User } from '../../classes/user';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export default class LoginComponent {
 
   loading : boolean = false;
 
@@ -47,6 +47,7 @@ export class LoginComponent {
           this.localstorage.saveDataUser(username);
           this.router.navigate(["home"]); 
           this.globalData.setStateLogin(true);
+          this.database.saveLog(username);
           this.toastr.success("Te has logeado !","Felicidades!", {timeOut: 3000,progressBar: true,closeButton:true}); 
         })
         .finally( () =>{
@@ -56,7 +57,7 @@ export class LoginComponent {
     .catch( () =>{
       this.loading = false;
       btnLogin.removeAttribute('disabled');
-      this.toastr.info("El usuario o contraseña son incorrectos","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
+      this.toastr.error("El usuario o contraseña son incorrectos","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
     })
     
   }

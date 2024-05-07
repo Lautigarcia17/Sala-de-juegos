@@ -18,7 +18,7 @@ import { User } from '../../classes/user';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css', '../login/login.component.css']
 })
-export class RegisterComponent {
+export default class RegisterComponent {
   loading : boolean = false;
 
   constructor(private fb: FormBuilder, private database : DatabaseService, private authentication : AuthService, private toastr : ToastrService,
@@ -50,17 +50,18 @@ export class RegisterComponent {
           this.database.saveUserDatabase(user);
           this.localstorage.saveDataUser(user.username);
           this.globalData.setStateLogin(true);
+          this.database.saveLog(user.username);
           this.toastr.success("Te has registrado !","Felicidades!", {timeOut: 3000,progressBar: true,closeButton:true}); 
           this.router.navigate(["home"]);
         }).catch( () =>{
-          this.toastr.info("El email ya esta registrado, utiliza otro!","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
+          this.toastr.error("El email ya esta registrado, utiliza otro!","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
         } )
         .finally( () =>{
           this.loading = false;
           btnRegister.removeAttribute('disabled');
         })
       }else{
-        this.toastr.info("El nombre de usuario ya esta registrado, utiliza otro!","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
+        this.toastr.error("El nombre de usuario ya esta registrado, utiliza otro!","Aviso!", {timeOut: 3000,progressBar: true,closeButton:true}); 
         this.loading = false;
         btnRegister.removeAttribute('disabled');
       }

@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { DocumentData, Firestore, QuerySnapshot, addDoc, collection, getDocs } from '@angular/fire/firestore';
+import { DocumentData, Firestore, QuerySnapshot, addDoc, collection, collectionData, getDocs, orderBy, serverTimestamp,query } from '@angular/fire/firestore';
 import { User } from '../classes/user';
+import { Observable, map } from 'rxjs';import { Message } from '../interfaces/message';
+;
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +18,17 @@ export class DatabaseService {
         username: user.username,
         email: user.email,
         password: user.password,
+      });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  }
+
+  saveLog(username: string): void {
+    try {
+      addDoc(collection(this.firestore, 'logs'), {
+        username: username,
+        date: serverTimestamp()
       });
     } catch (error) {
       console.error("Error adding document: ", error);
@@ -64,6 +77,33 @@ export class DatabaseService {
     })
   }
 
+  //messages
+  getMessages(): Observable<Message[]> {
+    const data = query(collection(this.firestore, 'messages'), orderBy('time', 'asc'));
+    return collectionData<any>(data)
+    .pipe(map( (messages : Message[]) => {
+        return messages.map( (message : any) => ({
+          username: message.username,
+          message: message.message,
+          time: message.time.toDate() 
+        }));
+      })
+    ) as Observable<Message[]>
+  }
 
+  
+  sendMessage(username : string, message: string) : void
+  {
+    try {
+      const date = new Date();
+      addDoc(collection(this.firestore,"messages"),{
+        username: username,
+        message: message,
+        time: date
+      });
+    } catch (error) {
+      console.error("Error adding document: ", error);
+    }
+  }
 
 }

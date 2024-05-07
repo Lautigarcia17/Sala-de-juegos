@@ -1,0 +1,105 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+div {
+    text-align: center;
+}
+
+
+
+.row {
+    margin-top: 20px;
+}
+
+.btn-start {
+    margin-top: 100px;
+    background-color: rgb(35 190 0);
+    color: white;
+    font-size: 35px;
+    font-weight: 700;
+    padding: 5px 30px;
+}
+
+h2 {
+    font-size: 20px;
+    color: red;
+}
+
+
+.tittle-game{
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.tittle-game h1{
+    color: #007bff;
+    font-size: 90px;
+    font-weight: 700;
+}
+
+.ahorcado-img{
+    width: 400px;
+    height: 300px;
+    border-radius: 20px;
+}
+
+.attemps{
+    color: white;
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.content-discover-letters{
+    font-size: 15px;
+    color: white;
+}
+
+.btn-letter{
+    font-size: 30px;
+    padding: 4px 20px;
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    margin-right: 10px;
+    margin-top: 5px;
+
+}
+
+.btn-letter:hover{
+    background-color: #004288;
+    border-color: transparent;
+}
+
+
+.disabled-btn {
+    background-color: white;
+    color: black;
+}
+  
+.disabled-btn:hover {
+    background-color: white;
+    border-color: none;
+
+}
+
+@media (width < 2000px) {
+    .content{
+        margin-top: 50px;
+    }
+    .tittle-game h1{
+        font-size: 40px;
+    }
+    .ahorcado-img {
+        width: 300px;
+        height: 200px;
+    }
+    .btn-letter{
+        font-size: 25px;
+        padding: 0px 10px;
+    }
+}

@@ -1,7 +1,7 @@
 .section {
     font-weight: bold;
     color: black;
-    margin-top: 20px;
+    /* margin-top: 20px; */
     padding: 100px 0;
     position: relative;
 }

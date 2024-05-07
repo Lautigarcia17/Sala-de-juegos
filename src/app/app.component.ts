@@ -7,6 +7,7 @@ import Swal, { SweetAlertResult } from 'sweetalert2';
 import { LocalStorageService } from './services/local-storage.service';
 import { ToastrService } from 'ngx-toastr';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

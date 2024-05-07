@@ -1,0 +1,41 @@
+<mat-sidenav-container class="chat-container" [style.width]="percentageWidth" [style.height]="percentageHeigth">
+  <mat-sidenav  class="chat-content" #sidenav mode="over" (closed)="resetScreen()">
+    <div class="header">
+      <h1>CHAT</h1>
+    </div>
+    
+    <div class="content-main" >
+      <ul class="chat-list mt-2" >
+        <li *ngFor="let message of globalData.getMessages();let index = index" [ngClass]="{'out': message.username === localstorage.currentUser}">
+            <div class="day" *ngIf="validateSameDay(message.time ,index)">
+              <h3>{{ message.time | dayName}}</h3>
+              <h5>{{ message.time | date: 'M/d/yy' }}</h5>
+            </div>
+  
+            
+            <div class="chat-body">
+              <div class="chat-message">
+                  <h5>{{message.username}}</h5>
+                  <p>{{message.message}}</p>
+                  <p class="time">{{message.time | date : 'HH:mm'}}</p>
+              </div>
+            </div>
+        </li>
+      </ul>
+    </div>
+
+    
+
+    <div class="message-content-input ">
+      <input type="text" class="form-control"  [(ngModel)]="message" name="message" placeholder="Enter text here..." (keyup.enter) = 'sendMessage()'>
+      <button type="button" (click)="sendMessage()">
+          Send
+      </button>
+    </div>
+
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+    <button class="btn-toggle" mat-button (click)="sidenav.toggle()"><img class="img-logo" src="../../../assets/chat.png" alt="chat"></button>
+  </mat-sidenav-content>
+</mat-sidenav-container>
