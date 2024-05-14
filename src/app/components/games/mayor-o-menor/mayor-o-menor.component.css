@@ -14,8 +14,9 @@
 .btn-start:hover {
     background-color: red;
     color: green;
-
+  transform: scale(1.1);
 }
+
 .name-card{
   color: white;
 }
@@ -61,3 +62,4 @@
   color: cyan; 
   text-transform: uppercase;
 }
+

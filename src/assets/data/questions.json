@@ -1,0 +1,475 @@
+[
+    {
+        "question": "Cual es la capital de España?",
+        "correct_answer": "Madrid",
+        "answers": [
+            "Madrid",
+            "Barcelona",
+            "Sevilla",
+            "Valencia"
+        ],
+        "image": "https://i.pinimg.com/736x/7c/2e/3e/7c2e3e575bdba08a53c445295140d091.jpg"
+    },
+    {
+        "question": "¿Cuál es el río más largo del mundo?",
+        "correct_answer": "Amazonas",
+        "answers": [
+            "Nilo",
+            "Mississippi",
+            "Yangtsé",
+            "Amazonas"
+        ],
+        "image": "https://cdn0.ecologiaverde.com/es/posts/8/3/2/que_es_y_como_se_forma_un_rio_3238_0_600.jpg"
+    },
+    {
+        "question": "¿En qué continente se encuentra Egipto?",
+        "correct_answer": "África",
+        "answers": [
+            "Asia",
+            "Europa",
+            "América",
+            "África"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpy6C1Dvb4_WkLGIhBxrto9Gd6u0oBJer_eSgijhlAQQ&s"
+    },
+    {
+        "question": "¿Quién pintó la Mona Lisa?",
+        "correct_answer": "Leonardo da Vinci",
+        "answers": [
+            "Pablo Picasso",
+            "Vincent van Gogh",
+            "Miguel Ángel",
+            "Leonardo da Vinci"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg/800px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_retouched.jpg"
+    },
+    {
+        "question": "¿Cuál es el metal más abundante en la corteza terrestre?",
+        "correct_answer": "Aluminio",
+        "answers": [
+            "Hierro",
+            "Oro",
+            "Plata",
+            "Aluminio"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsmZUMqQhBPAep_hQ89cq_0dM8vWDYgWD11t62Pf_fIA&s"
+    },
+    {
+        "question": "¿Cuál es la moneda oficial de Japón?",
+        "correct_answer": "Yen",
+        "answers": [
+            "Dólar",
+            "Euro",
+            "Libra esterlina",
+            "Yen"
+        ],
+        "image": "https://www.cronista.com/files/image/633/633733/647f18657ced5_700_462!.jpg?s=7e13105b187c9eb7e2d1f6be2d25bb4e&d=1712756982"
+    },
+    {
+        "question": "¿Quién escribió 'Don Quijote de la Mancha'?",
+        "correct_answer": "Miguel de Cervantes",
+        "answers": [
+            "William Shakespeare",
+            "Gabriel García Márquez",
+            "Federico García Lorca",
+            "Miguel de Cervantes"
+        ],
+        "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1678144051i/122858226.jpg"
+    },
+    {
+        "question": "¿Cuál es el planeta más grande del sistema solar?",
+        "correct_answer": "Júpiter",
+        "answers": [
+            "Saturno",
+            "Neptuno",
+            "Urano",
+            "Júpiter"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Jupiter_and_its_shrunken_Great_Red_Spot.jpg/800px-Jupiter_and_its_shrunken_Great_Red_Spot.jpg"
+    },
+    {
+        "question": "¿En qué año comenzó la Segunda Guerra Mundial?",
+        "correct_answer": "1939",
+        "answers": [
+            "1914",
+            "1945",
+            "1950",
+            "1939"
+        ],
+        "image": "https://cnnespanol.cnn.com/wp-content/uploads/2021/08/140828132531-01-world-war-ii-0828-horizontal-large-gallery.jpg?quality=100&strip=info"
+    },
+    {
+        "question": "¿Cuál es el océano más grande del mundo?",
+        "correct_answer": "Pacífico",
+        "answers": [
+            "Atlántico",
+            "Índico",
+            "Ártico",
+            "Pacífico"
+        ],
+        "image": "https://concepto.de/wp-content/uploads/2018/09/oc%C3%A9ano-e1537912452874.jpg"
+    },
+    {
+        "question": "¿Cuál es el país más grande del mundo?",
+        "correct_answer": "Rusia",
+        "answers": [
+            "Canadá",
+            "China",
+            "Estados Unidos",
+            "Rusia"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxGyLtEpDcJ_qSh4EEznbU9GPfqFn6qZX4RzwbxzV35w&s"
+    },
+    {
+        "question": "¿Quién fue el primer presidente de Estados Unidos?",
+        "correct_answer": "George Washington",
+        "answers": [
+            "Abraham Lincoln",
+            "Thomas Jefferson",
+            "John Adams",
+            "George Washington"
+        ],
+        "image": "https://media.istockphoto.com/id/937902080/es/vector/mapa-de-la-silueta-de-los-estados-unidos-de-am%C3%A9rica.jpg?s=612x612&w=0&k=20&c=fSh14KDFIr-clMtPxzt4z1bYm_vi6chQBovaYfw5G7M="
+    },
+    {
+        "question": "¿Cuál es el metal líquido a temperatura ambiente?",
+        "correct_answer": "Mercurio",
+        "answers": [
+            "Plomo",
+            "Estaño",
+            "Cobre",
+            "Mercurio"
+        ],
+        "image": "https://i.blogs.es/3a3067/metal-liquido/840_560.jpg"
+    },
+    {
+        "question": "¿En qué año llegó el hombre a la Luna por primera vez?",
+        "correct_answer": "1969",
+        "answers": [
+            "1959",
+            "1979",
+            "1989",
+            "1969"
+        ],
+        "image": "https://cdn.unotv.com/images/2023/07/hombre-luna-152816.jpg"
+    },
+    {
+        "question": "¿Cuál es la montaña más alta del mundo?",
+        "correct_answer": "Monte Everest",
+        "answers": [
+            "Monte Kilimanjaro",
+            "Monte Denali",
+            "Monte Aconcagua",
+            "Monte Everest"
+        ],
+        "image": "https://humanidades.com/wp-content/uploads/2018/11/montan%CC%83as-e1543190126108.jpg"
+    },
+    {
+        "question": "¿Cuál es la capital de Italia?",
+        "correct_answer": "Roma",
+        "answers": [
+            "Milán",
+            "Nápoles",
+            "Florencia",
+            "Roma"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1cfSoY2G1cFAjQhXw3J_YYbRO4BkNeeHYim36wHOphA&s"
+    },
+    {
+        "question": "¿Quién escribió la obra 'Romeo y Julieta'?",
+        "correct_answer": "William Shakespeare",
+        "answers": [
+            "Miguel de Cervantes",
+            "Jorge Luis Borges",
+            "Federico García Lorca",
+            "William Shakespeare"
+        ],
+        "image": "https://i.pinimg.com/236x/a7/99/c6/a799c6cd1fbdcf20060e4e73976d4239.jpg"
+    },
+    {
+        "question": "¿En qué año se fundó la compañía Apple?",
+        "correct_answer": "1976",
+        "answers": [
+            "1984",
+            "1990",
+            "2000",
+            "1976"
+        ],
+        "image": "https://www.apple.com/ac/structured-data/images/open_graph_logo.png?202305280849"
+    },
+    {
+        "question": "¿Cuál es el hueso más largo del cuerpo humano?",
+        "correct_answer": "Fémur",
+        "answers": [
+            "Húmero",
+            "Tibia",
+            "Radio",
+            "Fémur"
+        ],
+        "image": "https://s1.elespanol.com/2017/09/27/ciencia/salud/traumatologia_y_ortopedia-cirugia_ortopedica_y_traumatologia-salud_249987587_50388480_1706x960.jpg"
+    },
+    {
+        "question": "¿En qué año se fundó la ciudad de Buenos Aires?",
+        "correct_answer": "1536",
+        "answers": [
+            "1810",
+            "1880",
+            "1900",
+            "1536"
+        ],
+        "image": "https://cdn.britannica.com/63/188963-050-2C94FEC2/Night-view-obelisk-Buenos-Aires.jpg"
+    },
+    {
+        "question": "¿Cuál es el océano más profundo del mundo?",
+        "correct_answer": "Pacífico",
+        "answers": [
+            "Atlántico",
+            "Índico",
+            "Ártico",
+            "Pacífico"
+        ],
+        "image": "https://www.fundacionaquae.org/wp-content/uploads/2014/08/oceanos2.jpg"
+    },
+    {
+        "question": "¿Quién pintó la obra 'La noche estrellada'?",
+        "correct_answer": "Vincent van Gogh",
+        "answers": [
+            "Pablo Picasso",
+            "Leonardo da Vinci",
+            "Claude Monet",
+            "Vincent van Gogh"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR00CUBLimKMdZkeGS44l-mJKGhlzwco4rjzB2J0IBkDA&s"
+    },
+    {
+        "question": "¿En qué año se inauguró el Canal de Panamá?",
+        "correct_answer": "1914",
+        "answers": [
+            "1900",
+            "1920",
+            "1930",
+            "1914"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtBWmy9zV-RyJtURJxBRIAO-A84rBPMOlEN2e-l4Hq6Q&s"
+    },
+    {
+        "question": "¿Cuál es el país con la mayor población del mundo?",
+        "correct_answer": "China",
+        "answers": [
+            "India",
+            "Estados Unidos",
+            "Indonesia",
+            "China"
+        ],
+        "image": "https://t1.uc.ltmcdn.com/es/posts/7/1/6/cuantos_paises_hay_en_el_mundo_29617_600.webp"
+    },
+    {
+        "question": "¿Quién fue el primer ser humano en orbitar la Tierra?",
+        "correct_answer": "Yuri Gagarin",
+        "answers": [
+            "Neil Armstrong",
+            "Buzz Aldrin",
+            "John Glenn",
+            "Yuri Gagarin"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnFB4O6Ni0DRA2avi-NcHffDZjUSJd1SItr7uM7zDftg&s"
+    },
+    {
+        "question": "¿Cuál es el animal terrestre más grande del mundo?",
+        "correct_answer": "Elefante africano",
+        "answers": [
+            "Gorila",
+            "Rinoceronte blanco",
+            "Jirafa",
+            "Elefante africano"
+        ],
+        "image": "https://imgmedia.elpopular.pe/640x358/elpopular/migration/sites/default/files/imagen/2017/06/25/Noticia-183665-el-reino-animal.webp"
+    },
+    {
+        "question": "¿En qué año se firmó la Declaración de Independencia de Estados Unidos?",
+        "correct_answer": "1776",
+        "answers": [
+            "1789",
+            "1799",
+            "1800",
+            "1776"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg/400px-Declaration_of_Independence_%281819%29%2C_by_John_Trumbull.jpg"
+    },
+    {
+        "question": "¿Cuál es el volcán más alto del mundo?",
+        "correct_answer": "Ojos del Salado",
+        "answers": [
+            "Monte Kilimanjaro",
+            "Monte Etna",
+            "Monte Fuji",
+            "Ojos del Salado"
+        ],
+        "image": "https://concepto.de/wp-content/uploads/2019/11/volcan-e1574434320237.jpg"
+    },
+    {
+        "question": "¿Quién escribió 'El principito'?",
+        "correct_answer": "Antoine de Saint-Exupéry",
+        "answers": [
+            "J.K. Rowling",
+            "George Orwell",
+            "Herman Melville",
+            "Antoine de Saint-Exupéry"
+        ],
+        "image": "https://www.clarin.com/img/2022/04/04/QYP6mNr8Z_2000x1500__1.jpg"
+    },
+    {
+        "question": "¿En qué año comenzó la Primera Guerra Mundial?",
+        "correct_answer": "1914",
+        "answers": [
+            "1900",
+            "1920",
+            "1930",
+            "1914"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/PrimeraGuerraMundial-collague.jpg/300px-PrimeraGuerraMundial-collague.jpg"
+    },
+    {
+        "question": "¿Cuál es el símbolo químico del oro?",
+        "correct_answer": "Au",
+        "answers": [
+            "Ag",
+            "Fe",
+            "Cu",
+            "Au"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Gold_bullion_bars.jpg/640px-Gold_bullion_bars.jpg"
+    },
+    {
+        "question": "¿Cuál es el país más pequeño del mundo?",
+        "correct_answer": "Ciudad del Vaticano",
+        "answers": [
+            "Mónaco",
+            "San Marino",
+            "Nauru",
+            "Ciudad del Vaticano"
+        ],
+        "image": "https://upload.wikimedia.org/wikipedia/commons/c/c2/Paises_de_America.gif"
+    },
+    {
+        "question": "¿Quién pintó la obra 'La persistencia de la memoria'?",
+        "correct_answer": "Salvador Dalí",
+        "answers": [
+            "Pablo Picasso",
+            "Vincent van Gogh",
+            "Claude Monet",
+            "Salvador Dalí"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYcrUK5HSnhUEP-cEoT6EyG83uDX9jPFVAsg3Z3qpU9A&s"
+    },
+    {
+        "question": "¿En qué año se firmó la Declaración Universal de Derechos Humanos?",
+        "correct_answer": "1948",
+        "answers": [
+            "1950",
+            "1960",
+            "1970",
+            "1948"
+        ],
+        "image": "https://www.es.amnesty.org/uploads/tx_useraiogimage/Eleanor-Roosevelt-DUDH_og.jpg"
+    },
+    {
+        "question": "¿Cuál es el continente más grande del mundo?",
+        "correct_answer": "Asia",
+        "answers": [
+            "África",
+            "América",
+            "Europa",
+            "Asia"
+        ],
+        "image": "https://concepto.de/wp-content/uploads/2019/04/continentes-800x410.jpg"
+    },
+    {
+        "question": "¿Cuál es el animal más rápido del mundo?",
+        "correct_answer": "Guepardo",
+        "answers": [
+            "Leopardo",
+            "León",
+            "Tigre",
+            "Guepardo"
+        ],
+        "image": "https://s1.significados.com/foto/animals-6939895-1280.jpg?class=article"
+    },
+    {
+        "question": "¿Quién pintó la obra 'Guernica'?",
+        "correct_answer": "Pablo Picasso",
+        "answers": [
+            "Vincent van Gogh",
+            "Leonardo da Vinci",
+            "Salvador Dalí",
+            "Pablo Picasso"
+        ],
+        "image": "https://static5.museoreinasofia.es/sites/default/files/obras/DE00050.jpg"
+    },
+    {
+        "question": "¿Cuál es la montaña más alta de Europa?",
+        "correct_answer": "Monte Elbrús",
+        "answers": [
+            "Mont Blanc",
+            "Monte Rosa",
+            "Monte Cervino",
+            "Monte Elbrús"
+        ],
+        "image": "https://assets.saposyprincesas.com/2019/12/monte-cook-aoraki.jpg"
+    },
+    {
+        "question": "¿Quién escribió 'Cien años de soledad'?",
+        "correct_answer": "Gabriel García Márquez",
+        "answers": [
+            "Mario Vargas Llosa",
+            "Jorge Luis Borges",
+            "Pablo Neruda",
+            "Gabriel García Márquez"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhevLrEYXMXxvCiTiK975F1XoCgn3D5Lewf6uWW8UzQw&s"
+    },
+    {
+        "question": "¿Cuál es el metal más caro del mundo?",
+        "correct_answer": "Rodio",
+        "answers": [
+            "Oro",
+            "Platino",
+            "Paladio",
+            "Rodio"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdriIV--kdPs_A4MeFFH5iCeGMwzLceTCW1YWEx5DdSA&s"
+    },
+    {
+        "question": "¿En qué año se inauguró la Torre Eiffel?",
+        "correct_answer": "1889",
+        "answers": [
+            "1900",
+            "1920",
+            "1940",
+            "1889"
+        ],
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_afW-WdleRbinPvTaI2GXfJhDOdFcmPbaAfbrMEf8gg&s"
+    },
+    {
+        "question": "¿Cuál es la flor más grande del mundo?",
+        "correct_answer": "Rafflesia arnoldii",
+        "answers": [
+            "Orquídea",
+            "Lirio",
+            "Rosa",
+            "Rafflesia arnoldii"
+        ],
+        "image": "https://img.freepik.com/foto-gratis/primer-disparo-flor-morada_181624-25863.jpg"
+    },
+    {
+        "question": "¿Quién fue el primer presidente de México?",
+        "correct_answer": "Guadalupe Victoria",
+        "answers": [
+            "Benito Juárez",
+            "Porfirio Díaz",
+            "Emiliano Zapata",
+            "Guadalupe Victoria"
+        ],
+        "image": "https://www.cronista.com/files/image/672/672591/64f7307f6a669.jpg"
+    }
+]

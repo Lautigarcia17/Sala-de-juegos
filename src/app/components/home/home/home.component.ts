@@ -35,25 +35,25 @@ export default class HomeComponent {
       img: "../../../assets/mayorOMenor/mayorOMenor.jpeg"
     },
     {
-      path : "", 
+      path : "preguntados", 
       name:"Preguntados",
       description: "Un juego de preguntas en el que a los jugadores se les presentan preguntas y respuestas de opción múltiple. El objetivo es seleccionar la respuesta correcta para ganar puntos.",
       img: "../../../assets/preguntados/preguntados.jpeg"
     },
     {
-      path : "", 
+      path : "buscaminas", 
       name:"Buscaminas",
       description: "Tienes que limpiar el campo minado sin detonar ninguna mina. Obtén la puntuación más alta o descubre todas las celdas vacías.",
       img: "../../../assets/buscaminas/buscaminas.jpeg"
     }
   ]
 
-  openChat() {
+  openChat() : void{
     this.percentageWidth = '100%';
     this.percentageHeigth = '94%';
   }
 
-  onSidenavClosed() {
+  onSidenavClosed() : void{
     this.percentageWidth = '15%';
     this.percentageHeigth = '15%';
   }

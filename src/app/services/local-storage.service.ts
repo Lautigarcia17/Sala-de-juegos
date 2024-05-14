@@ -17,7 +17,7 @@ export class LocalStorageService {
     localStorage.setItem("stateLogin","true");
   }
 
-  private readDataUser() 
+  private readDataUser() : Record<string,string>
   {
     let data  = localStorage.getItem("user") != null ? JSON.parse(localStorage.getItem("user") as string) : "";
     return data;

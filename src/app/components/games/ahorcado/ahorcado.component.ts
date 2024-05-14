@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { WordsService } from '../../../services/words.service';
 import { CommonModule, Location } from '@angular/common';
@@ -10,7 +10,7 @@ import { CommonModule, Location } from '@angular/common';
   templateUrl: './ahorcado.component.html',
   styleUrl: './ahorcado.component.css'
 })
-export default class AhorcadoComponent implements OnDestroy{
+export default class AhorcadoComponent implements OnInit,OnDestroy{
   letters: any;
   buttonDisabled!: boolean[];
   consultWords! : Subscription;
@@ -21,34 +21,32 @@ export default class AhorcadoComponent implements OnDestroy{
   lost! : boolean;
   invalidLetters! : string;
 
-  constructor(private genWord : WordsService, private location: Location){
-    this.setValuesDefault();
+  constructor(private genWord : WordsService, private location: Location){}
 
+  ngOnInit(): void {
+    this.setValuesDefault();
     this.startGame();
     this.loadButtonDisabled();
   }
 
-  startGame()
+  startGame() : void
   {
     const consult = this.genWord.generateWord();
     this.loadButtonDisabled();
     
-    this.consultWords = consult.subscribe((result : any)=>{
-      let word = this.removeAccents(result[0]).toUpperCase();
-      this.word =  word;
+    this.consultWords = consult.subscribe((responseWord : string)=>{
+      this.word =  this.removeAccents(responseWord).toUpperCase();;
       this.wordHidden = "_ ".repeat(this.word.length);
-      
-      console.log(word);
     })
   }
 
-  retry()
+  retry() : void
   {
     this.setValuesDefault();
     this.startGame();
   }
 
-  verifyLetter(letter : string, index : number) {
+  verifyLetter(letter : string, index : number) : void {
     this.buttonDisabled[index] = true;
     if(this.existsLetter(letter))
     {
@@ -64,7 +62,7 @@ export default class AhorcadoComponent implements OnDestroy{
     this.verifyWinner();
 
   }
-  verifyWinner() {
+  verifyWinner() : void{
     const wordArray = this.wordHidden.split(" ");
     const wordToEvaluate = wordArray.join("");
 
@@ -87,21 +85,15 @@ export default class AhorcadoComponent implements OnDestroy{
     return exists;
   }
 
-
-  
-  goBack(){
-    this.location.back();
-  }
-
-
-  loadButtonDisabled(){
+  loadButtonDisabled() : void{
     this.buttonDisabled = new Array(this.letters.length).fill(false);
   }
+
    removeAccents(word: string): string {
     return word.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   }
 
-  setValuesDefault(){
+  setValuesDefault() : void{
     this.letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
     this.attemps = 0;
     this.win = false;
@@ -109,7 +101,11 @@ export default class AhorcadoComponent implements OnDestroy{
     this.invalidLetters = '';
     this.buttonDisabled = [];
   }
-  
+
+  goBack() : void{
+    this.location.back();
+  }
+
   ngOnDestroy(): void {
     if (this.consultWords) {
       this.consultWords.unsubscribe();

@@ -1,0 +1,19 @@
+<button class="back-button" (click)="goBack()"> <img src="../../../../assets/back-img.jpg" class="back-icon"> </button>
+<div class="container">
+
+    <div class="content" *ngIf="questions.length">
+        <img class="image-question" src="{{questions[0].image}}" alt="image-question">
+        <h1>{{questions[0].question}}</h1>
+        <div class="answers" id="answers">
+            <div *ngFor="let answer of questions[0]?.answers">
+                <button  (click)="verifyAnswer(answer)">{{answer}}</button>
+            </div> 
+        </div>
+        
+        <h2 class="message-result">{{messageResult}}</h2>
+        <h2 class="score">Score: {{score}}</h2>
+    </div>
+    <div class="text-center mt-5">
+        <button class="btn-start" *ngIf="!stateStart" (click)="startGame()">Volver a jugar</button>
+    </div>
+</div>

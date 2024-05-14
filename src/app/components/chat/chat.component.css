@@ -155,7 +155,7 @@
 
 .btn-toggle{
   border-radius: 20px;
-  background-color: transparent;
+  background-color: #4887f9;
   color: white;
   margin: 35px 0px 0px 30px;
 
@@ -169,5 +169,6 @@
 .img-logo{
   height: 100%;
   width: 100%;
+  border-radius: 20px;
 }
 

@@ -29,7 +29,7 @@ export default class LoginComponent {
     "password": ["",Validators.required]
   })
 
-  login()
+  login() : void
   {
     let btnLogin : HTMLElement = document.getElementById('btn-login') as HTMLElement; 
     let user : User = new User(
@@ -62,7 +62,7 @@ export default class LoginComponent {
     
   }
 
-  accessAutomatically(numberUser : number)
+  accessAutomatically(numberUser : number) : void
   {
     switch(numberUser)
     {

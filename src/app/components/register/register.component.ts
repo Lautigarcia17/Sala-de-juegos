@@ -30,7 +30,7 @@ export default class RegisterComponent {
     "username": ["",Validators.required]
   })
 
-  register()
+  register() : void
   {
     let btnRegister : HTMLElement = document.getElementById('btn-register') as HTMLElement;
     let user : User = new User(

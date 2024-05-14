@@ -1,23 +1,25 @@
 <button class="back-button" (click)="goBack()"> <img src="../../../../assets/back-img.jpg" class="back-icon"> </button>
 <div class="text-center" >
 
-   
-        <h2 class="name-card" >{{cardOne.name}}</h2>
-        <img src="{{cardOne.img}}">
-        <hr>
-        <br>
-        <br>
-        <button class="btn-higher" id="btn-higher"  (click)="compareCards('mayor')">Mayor</button>
-        <button class="btn-lower" id="btn-lower"  (click)="compareCards('menor')">Menor</button>
+
+        <div class="mb-5" *ngIf="deckCards.length">
+            <h2 class="name-card" >{{deckCards[0].name}}</h2>
+            <img src="{{deckCards[0].img}}">
+        </div>
+
+
+        <div id="btn-option">
+            <button class="btn-higher" id="btn-higher"  (click)="compareCards('mayor')">Mayor</button>
+            <button class="btn-lower" id="btn-lower"  (click)="compareCards('menor')">Menor</button>
+        </div>
 
         <div class="mt-5">
             <img class="size-card"  *ngIf="!viewCard"
                 src="../../../../assets/mayorOMenor/reverseCard.png">
         </div>
         <div *ngIf="viewCard">
-            <h2 style="color: white;">Image Compare</h2>
-            <h2 style="color: white;">{{cardTwo.name}}</h2>
-            <img src="{{cardTwo.img}}">
+            <h2 class="name-card">{{deckCards[1].name}}</h2>
+            <img src="{{deckCards[1].img}}">
         </div>
 
         <h3 class="btn-message mt-5"  >{{messageResult}}</h3>

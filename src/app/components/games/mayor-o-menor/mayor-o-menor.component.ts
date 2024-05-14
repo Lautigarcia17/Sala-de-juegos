@@ -1,7 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { CommonModule, Location } from '@angular/common';
 import { CardsService } from '../../../services/cards.service';
+import { Card } from '../../../classes/card';
 
 
 
@@ -12,175 +13,104 @@ import { CardsService } from '../../../services/cards.service';
   templateUrl: './mayor-o-menor.component.html',
   styleUrl: './mayor-o-menor.component.css'
 })
-export default class MayorOMenorComponent implements OnDestroy{
-  cardSubscription! : Subscription;
-  flag! : boolean;
-  viewCard! : boolean;
-  stateStart! : boolean;
-  score! : number;
-  messageResult! : string;
-  wonHand! : boolean;
+export default class MayorOMenorComponent implements OnInit,OnDestroy {
+  cardSubscription!: Subscription;
+  viewCard!: boolean;
+  stateStart!: boolean;
+  score!: number;
+  messageResult!: string;
+  deckCards!: Card[];
 
-  cardOne = {
-    img : "",
-    name : "",
-    value : ""
-  }
-  cardTwo = {
-    img : "",
-    name : "",
-    value : ""
-  }
+  constructor(private cards: CardsService, private location: Location) {}
 
-
-
-  constructor(private cards : CardsService, private location: Location){
+  ngOnInit(): void {
     this.start();
   }
 
-
-
-
-
-  start(){
+  start() : void{
     let btnHigher: HTMLElement = document.getElementById('btn-higher') as HTMLElement;
     let btnLower: HTMLElement = document.getElementById('btn-lower') as HTMLElement;
-    if(btnHigher && btnLower){
-      this.enableButtons();
+    if (btnHigher && btnLower) {
+      this.disableButton(false);
     }
     this.setValuesDefault()
     this.createCard();
   }
-    
-  createCard()
-  {
+
+  createCard() : void{
     const consult = this.cards.generateCard();
-    this.cardSubscription = consult.subscribe((result : any)=>{
-      
-      console.log(result.cards[1])
-      if(this.cardOne.value == "")
-      {
-        this.cardOne.img = result.cards[0].image;    
-        this.cardOne.value = result.cards[0].value;
-        this.cardOne.name = this.cardOne.value + " " + result.cards[0].suit; 
-      }
-      
-      if(this.flag == false || this.cardTwo.value == "")
-      {
-        this.flag = true;
-        this.cardTwo.value = result.cards[1].value;
-        this.cardTwo.img = result.cards[1].image;    
-        this.cardTwo.name = this.cardTwo.value + " " + result.cards[1].suit;   
-      }
+    this.cardSubscription = consult.subscribe((cards: any) => {
+      this.deckCards = cards;
     }),
-    (error : any) => {
-      console.error('Subscription error:', error);
-    },
-    () => {
-      console.log('Subscription completed.');
-    }  
+      (error: any) => {
+        console.error('Subscription error:', error);
+      },
+      () => {
+        console.log('Subscription completed.');
+      }
 
   }
 
 
 
-  compareCards(response : string)
-  {
-
-    this.wonHand = true;
+  compareCards(response: string) : void{
     this.viewCard = true;
-    let cardOne =  !isNaN(parseInt(this.cardOne.value))  ? parseInt(this.cardOne.value) : this.isFigure(this.cardOne.value);
-    let cardTwo =  !isNaN(parseInt(this.cardTwo.value))  ? parseInt(this.cardTwo.value) : this.isFigure(this.cardTwo.value);
+    let cardOne: number = this.deckCards[0].getNumberOfCard();
+    let cardTwo: number = this.deckCards[1].getNumberOfCard();
 
-    let continueGame = true;
 
-    if (cardOne === cardTwo)
-    {
-      this.score++;
-      this.messageResult = "Es la misma";
+    if ((response == "mayor" && cardTwo < cardOne) || (response == "menor" && cardTwo > cardOne)) {
+      this.messageResult = 'Perdiste, Vuelve a intentarlo !';
+      this.stateStart = false;
+      this.disableButton(true);
     }
     else{
-      if((response == "mayor" && cardTwo > cardOne) || ( response == "menor" && cardTwo < cardOne ))
-      {
-        this.score++;
-        this.messageResult = `es ${response},Ganaste!`;
+      if (cardOne === cardTwo) {
+        this.messageResult = "Es la misma";
       }
       else{
-        this.messageResult = 'Perdiste, Vuelve a intentarlo !';
-        this.stateStart = false;
-        continueGame = false;
-        this.wonHand = false;
-        this.disableButtons();
-      }        
+        this.messageResult = `es ${response},Ganaste!`;
+      }
+
+      this.score++;
+      if(this.deckCards.length == 2){ /* Complete the entire deck*/
+        this.messageResult = 'Felicidades, completaste toda la baraja!';
+        this.stateStart = false;;
+      }
+      else{
+        this.viewCard = false;
+        this.deckCards.shift();
+      }
+
     }
-    
-    if (continueGame) {
-      this.viewCard = false;
-      this.cardOne = {...this.cardTwo};
-      this.clearCard(this.cardTwo);
-      this.createCard();
-    }
-
-   
-
-    
-
-    
   }
 
-  isFigure(figure : string) : number
-  {
-    let number = -1;
-    switch(figure)
-    {
-      case "JACK":
-        number = 11;
-        break;
-      case "QUEEN":
-        number = 12;
-        break;
-      case "KING":  
-        number = 13;
-      break;
-      case "ACE":
-        number = 14;
-      break;
-    }
-    return number;
-  }
 
-  clearCard(card : any)
-  {
-    card.name = "";
-    card.img = "";
-    card.value = "";
-  }
 
-  setValuesDefault(){
-    this.flag = false;
+
+  setValuesDefault() : void{
     this.stateStart = true;
     this.viewCard = false;
     this.messageResult = '';
     this.score = 0;
-    this.clearCard(this.cardOne);
-    this.clearCard(this.cardTwo);
-  }
-
-  disableButtons(){
-    let btnHigher : HTMLElement = document.getElementById('btn-higher') as HTMLElement;
-    let btnLower : HTMLElement = document.getElementById('btn-lower') as HTMLElement;
-    btnHigher.setAttribute('disabled','true');
-    btnLower.setAttribute('disabled','true');
-  }
-  enableButtons(){
-    let btnHigher : HTMLElement = document.getElementById('btn-higher') as HTMLElement;
-    let btnLower : HTMLElement = document.getElementById('btn-lower') as HTMLElement;
-    btnHigher.removeAttribute('disabled');
-    btnLower.removeAttribute('disabled');
+    this.deckCards = [];
   }
 
 
-  goBack(){
+
+  disableButton(state : boolean) : void{
+    if (document.getElementById('btn-option')) {
+      const div : HTMLElement = document.getElementById('btn-option') as HTMLElement;
+      const buttons: HTMLCollectionOf<HTMLButtonElement> = div.getElementsByTagName('button');
+      for (let i = 0; i < buttons.length; i++) {
+          buttons[i].disabled = state;
+      }
+    }
+  }
+
+
+
+  goBack() : void{
     this.location.back();
   }
 

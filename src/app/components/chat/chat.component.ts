@@ -27,7 +27,7 @@ export class ChatComponent{
 
 
 
-  sendMessage(){
+  sendMessage() : void{
     if (this.message != '') {
       this.database.sendMessage(this.localstorage.currentUser,this.message);
       this.message = '';
@@ -58,7 +58,7 @@ export class ChatComponent{
     return showDate
   }
 
-  resetScreen() {
+  resetScreen() : void{
     this.sidenavClosed.emit();
   }
 
