@@ -65,7 +65,6 @@ export default class PreguntadosComponent implements OnInit,OnDestroy{
       }
     }
     else{
-
       this.disableButton(true);
       this.messageResult = `Perdiste !! La respuesta correcta era ${this.questions[0].correct_answer}`;
       this.stateStart = false;
