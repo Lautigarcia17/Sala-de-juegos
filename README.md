@@ -1,27 +1,38 @@
-# Saladejuegos
+# 🎮 Sala De Juegos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+Sala De Juegos is a web-based arcade featuring four classic games designed to entertain and challenge players. This project is built using Angular and TypeScript, ensuring a dynamic and responsive gaming experience.
 
-## Development server
+### 🕹️ Games Included
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Hangman 📝**: Guess the word before you run out of attempts!
+- **Higher or Lower 🔢**: Predict if the next number will be higher or lower than the current one.
+- **Trivia Crack 🎓**: Test your knowledge with a variety of trivia questions.
+- **Minesweeper 💣**: Uncover the grid without triggering hidden mines.
 
-## Code scaffolding
+### 🚀 Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **User-friendly interface**: Intuitive design for seamless gameplay.
+- **Dynamic interactions**: Smooth animations and transitions.
+- **Score tracking**: Keep track of your performance across different games.
 
-## Build
+### 🛠️ Built With
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Frontend**: Angular with TypeScript
+- **Styling**: SCSS/CSS for a visually appealing experience
+- **State Management**: Angular Services
 
-## Running unit tests
+### 📦 Installation & Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To run the project locally, follow these steps:
 
-## Running end-to-end tests
+1. **Clone the repository:**
+   ```bash
+    git clone https://github.com/Lautigarcia17/Sala-de-juegos
+    npm install
+    ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### 🤝 Contributing
+Contributions are welcome! Feel free to fork the repository and submit a pull request with improvements.
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+###📜 License
+This project is licensed under the MIT License. See the LICENSE file for details.
